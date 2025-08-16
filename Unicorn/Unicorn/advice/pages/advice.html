@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Unicorn - Magical Advice Hub</title>
+  <link rel="stylesheet" href="../css/main.css">
+  <link rel="stylesheet" href="../css/form.css">
+  <link rel="stylesheet" href="../css/output.css">
+  <link rel="stylesheet" href="../css/animations.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Caveat:wght@400;700&family=Courier+Prime:wght@400;700&family=Poppins:wght@300;500;700&display=swap" rel="stylesheet">
+</head>
+<body>
+  <div class="app-container">
+    <header>
+      <div class="logo">
+        <span class="sparkle sparkle-1">✨</span>
+        <h1>Unicorn<span class="accent">.</span></h1>
+        <span class="sparkle sparkle-2">✨</span>
+      </div>
+      <p class="tagline">Magical Advice Hub for Startups</p>
+    </header>
+
+    <main>
+      <section class="form-section" id="formSection">
+        <div class="form-container">
+          <h2>Share Your Business Vision</h2>
+          <form id="businessForm">
+            <div class="form-group">
+              <label for="businessIdea">Business Idea</label>
+              <textarea id="businessIdea" rows="3" placeholder="Describe your business idea..." required></textarea>
+            </div>
+            
+            <div class="form-row">
+              <div class="form-group">
+                <label for="industry">Industry</label>
+                <select id="industry" required>
+                  <option value="" disabled selected>Select Industry</option>
+                  <option value="Technology">Technology</option>
+                  <option value="Healthcare">Healthcare</option>
+                  <option value="Education">Education</option>
+                  <option value="Finance">Finance</option>
+                  <option value="Retail">Retail</option>
+                  <option value="Food & Beverage">Food & Beverage</option>
+                  <option value="Entertainment">Entertainment</option>
+                  <option value="Manufacturing">Manufacturing</option>
+                  <option value="Other">Other</option>
+                </select>
+              </div>
+              
+              <div class="form-group">
+                <label for="stage">Business Stage</label>
+                <select id="stage" required>
+                  <option value="" disabled selected>Select Stage</option>
+                  <option value="Idea">Idea</option>
+                  <option value="MVP">MVP</option>
+                  <option value="Scaling">Scaling</option>
+                </select>
+              </div>
+            </div>
+            
+            <div class="form-row">
+              <div class="form-group">
+                <label for="region">Region</label>
+                <select id="region" required>
+                  <option value="" disabled selected>Select Region</option>
+                  <option value="North America">North America</option>
+                  <option value="Europe">Europe</option>
+                  <option value="Asia">Asia</option>
+                  <option value="Middle East">Middle East</option>
+                  <option value="Africa">Africa</option>
+                  <option value="South America">South America</option>
+                  <option value="Australia/Oceania">Australia/Oceania</option>
+                </select>
+              </div>
+              
+              <div class="form-group">
+                <label for="capital">Startup Capital ($)</label>
+                <input type="number" id="capital" min="0" placeholder="10000" required>
+              </div>
+            </div>
+            
+            <div class="form-row">
+              <div class="form-group">
+                <label for="timeline">Launch Timeline</label>
+                <select id="timeline" required>
+                  <option value="" disabled selected>Select Timeline</option>
+                  <option value="0-3 months">0-3 months</option>
+                  <option value="3-6 months">3-6 months</option>
+                  <option value="6-12 months">6-12 months</option>
+                  <option value="1+ year">1+ year</option>
+                </select>
+              </div>
+              
+              <div class="form-group">
+                <label for="experience">Founder Experience</label>
+                <select id="experience" required>
+                  <option value="" disabled selected>Select Experience</option>
+                  <option value="First-time founder">First-time founder</option>
+                  <option value="Previous startup experience">Previous startup experience</option>
+                  <option value="Industry expert">Industry expert</option>
+                  <option value="Serial entrepreneur">Serial entrepreneur</option>
+                </select>
+              </div>
+            </div>
+            
+            <div class="form-group">
+              <label for="platform">Platform</label>
+              <select id="platform" required>
+                <option value="" disabled selected>Select Platform</option>
+                <option value="Online">Online</option>
+                <option value="Offline">Offline</option>
+                <option value="Hybrid">Hybrid</option>
+              </select>
+            </div>
+            
+            <div class="form-actions">
+              <button type="submit" id="submitBtn" class="btn-submit">
+                <span class="btn-text">Get Magical Advice</span>
+                <span class="btn-sparkle">✨</span>
+              </button>
+            </div>
+          </form>
+        </div>
+      </section>
+
+      <section class="output-section hidden" id="outputSection">
+        <div class="output-controls">
+          <button id="backBtn" class="btn-back">← Back to Form</button>
+        </div>
+        <div class="chalkboard">
+          <div class="chalk-dust"></div>
+          <div class="output-container">
+            <div class="loading-container" id="loadingContainer">
+              <div class="loading-unicorn">
+                <div class="unicorn-horn"></div>
+                <div class="unicorn-face"></div>
+              </div>
+              <p class="loading-text">Conjuring magical advice...</p>
+            </div>
+            <div class="advice-container hidden" id="adviceContainer">
+              <h2 class="advice-title">Your Magical Business Advice</h2>
+              <div class="advice-content" id="adviceContent">
+                <!-- Content will be populated by JavaScript -->
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <footer>
+      <p>Made with ✨ magic ✨ by Unicorn Advisors | 2025</p>
+    </footer>
+  </div>
+
+  <div class="magic-cursor"></div>
+  
+  <script src="../js/app.js" type="module"></script>
+   <script src="../js/form.js" type="module"></script>
+    <script src="../js/render.js" type="module"></script>
+     <script src="../js/api.js" type="module"></script>
+</body>
+</html>

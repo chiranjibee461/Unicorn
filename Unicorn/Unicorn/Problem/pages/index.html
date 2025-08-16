@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Unicorn - Business Problem Solver</title>
+  <link rel="stylesheet" href="../css/main.css">
+    <link rel="stylesheet" href="../css/input-section.css">
+      <link rel="stylesheet" href="../css/output-section.css">
+        <link rel="stylesheet" href="../css/header.css">
+          <link rel="stylesheet" href="../css/variables.css">
+            <link rel="stylesheet" href="../css/responsive.css">
+              <link rel="stylesheet" href="../css/animations.css">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700&display=swap">
+</head>
+<body>
+  <div class="app-container">
+    <header class="header">
+      <div class="logo-container">
+        <div class="logo">
+          <div class="sparkle sparkle-1"></div>
+          <div class="sparkle sparkle-2"></div>
+          <div class="sparkle sparkle-3"></div>
+          <div class="unicorn-icon"></div>
+        </div>
+        <h1 class="brand-name">Unicorn</h1>
+      </div>
+      <p class="tagline">Transform your business problems into magical solutions</p>
+    </header>
+
+    <main class="main-content">
+      <section class="input-section">
+        <h2 class="section-title">What business problem can we solve for you?</h2>
+        <div class="input-container">
+          <textarea id="problem-input" class="problem-input" placeholder="Describe your business challenge here..."></textarea>
+          <button id="generate-btn" class="generate-btn">
+            <span class="btn-text">Generate Solution</span>
+            <div class="btn-shine"></div>
+          </button>
+        </div>
+      </section>
+
+      <section class="output-section">
+        <h2 class="section-title">Your Unicorn Solution</h2>
+        <div id="solution-container" class="solution-container">
+          <div class="solution-placeholder">
+            <div class="unicorn-waiting">
+              <div class="unicorn-waiting-icon"></div>
+              <p>Your solution will appear here</p>
+            </div>
+          </div>
+          <div id="solution-content" class="solution-content hidden">
+            <!-- Solution will be inserted here -->
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <footer class="footer">
+      <p>Powered by Unicorn Magic ✨</p>
+      <p class="copyright">© 2025 Unicorn Solutions</p>
+    </footer>
+  </div>
+
+  <script src="../js/main.js"></script>
+</body>
+</html>

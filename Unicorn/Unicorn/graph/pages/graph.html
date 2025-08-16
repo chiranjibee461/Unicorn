@@ -1,0 +1,292 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <link rel="icon" type="image/svg+xml" href="/vite.svg" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Unicorn - Startup Business Planner</title>
+  <link rel="stylesheet" href="../css/styles.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+<body>
+  <header>
+    <div class="container">
+      <div class="logo">
+        <i class="fas fa-unicorn"></i>
+        <h1>Unicorn</h1>
+      </div>
+      <p class="tagline">Startup Business Planner</p>
+    </div>
+  </header>
+
+  <main class="container">
+    <section id="intro">
+      <h2>Predict Your Startup's Success</h2>
+      <p>Fill in your business details below and our AI will analyze your startup's potential.</p>
+    </section>
+
+    <section id="form-section">
+      <form id="business-form">
+        <div class="form-grid">
+          <!-- Basic Information -->
+          <div class="form-group-title">
+            <h3><i class="fas fa-info-circle"></i> Basic Information</h3>
+          </div>
+          
+          <div class="form-group">
+            <label for="business-name">Business Name</label>
+            <input type="text" id="business-name" name="businessName" required placeholder="Your Startup Name">
+          </div>
+          
+          <div class="form-group">
+            <label for="industry">Industry</label>
+            <select id="industry" name="industry" required>
+              <option value="" disabled selected>Select Industry</option>
+              <option value="technology">Technology</option>
+              <option value="healthcare">Healthcare</option>
+              <option value="finance">Finance</option>
+              <option value="education">Education</option>
+              <option value="ecommerce">E-Commerce</option>
+              <option value="manufacturing">Manufacturing</option>
+              <option value="real-estate">Real Estate</option>
+              <option value="other">Other</option>
+            </select>
+          </div>
+          
+          <div class="form-group">
+            <label for="business-model">Business Model</label>
+            <select id="business-model" name="businessModel" required>
+              <option value="" disabled selected>Select Model</option>
+              <option value="saas">SaaS</option>
+              <option value="marketplace">Marketplace</option>
+              <option value="subscription">Subscription</option>
+              <option value="ecommerce">E-Commerce</option>
+              <option value="service">Service-based</option>
+              <option value="hardware">Hardware</option>
+              <option value="other">Other</option>
+            </select>
+          </div>
+
+          <!-- Financial Information -->
+          <div class="form-group-title">
+            <h3><i class="fas fa-dollar-sign"></i> Financial Information</h3>
+          </div>
+          
+          <div class="form-group">
+            <label for="startup-capital">Startup Capital ($)</label>
+            <input type="number" id="startup-capital" name="startupCapital" required placeholder="e.g., 100000">
+          </div>
+          
+          <div class="form-group">
+            <label for="monthly-costs">Monthly Costs ($)</label>
+            <input type="number" id="monthly-costs" name="monthlyCosts" required placeholder="e.g., 10000">
+          </div>
+          
+          <div class="form-group">
+            <label for="revenue">Current Monthly Revenue ($)</label>
+            <input type="number" id="revenue" name="revenue" required placeholder="e.g., 15000">
+          </div>
+
+          <!-- Market Information -->
+          <div class="form-group-title">
+            <h3><i class="fas fa-chart-line"></i> Market Information</h3>
+          </div>
+          
+          <div class="form-group">
+            <label for="market-size">Target Market Size ($M)</label>
+            <input type="number" id="market-size" name="marketSize" required placeholder="e.g., 100">
+          </div>
+          
+          <div class="form-group">
+            <label for="cac">Customer Acquisition Cost ($)</label>
+            <input type="number" id="cac" name="cac" required placeholder="e.g., 50">
+          </div>
+          
+          <div class="form-group">
+            <label for="clv">Customer Lifetime Value ($)</label>
+            <input type="number" id="clv" name="clv" required placeholder="e.g., 500">
+          </div>
+          
+          <div class="form-group">
+            <label for="demand-level">Market Demand Level</label>
+            <select id="demand-level" name="demandLevel" required>
+              <option value="" disabled selected>Select Level</option>
+              <option value="very-high">Very High</option>
+              <option value="high">High</option>
+              <option value="medium">Medium</option>
+              <option value="low">Low</option>
+              <option value="very-low">Very Low</option>
+            </select>
+          </div>
+
+          <div class="form-group">
+            <label for="competitor-strength">Competitor Strength</label>
+            <select id="competitor-strength" name="competitorStrength" required>
+              <option value="" disabled selected>Select Strength</option>
+              <option value="very-strong">Very Strong</option>
+              <option value="strong">Strong</option>
+              <option value="medium">Medium</option>
+              <option value="weak">Weak</option>
+              <option value="very-weak">Very Weak</option>
+            </select>
+          </div>
+
+          <!-- Team Information -->
+          <div class="form-group-title">
+            <h3><i class="fas fa-users"></i> Team Information</h3>
+          </div>
+          
+          <div class="form-group">
+            <label for="team-size">Team Size</label>
+            <input type="number" id="team-size" name="teamSize" required placeholder="e.g., 5">
+          </div>
+          
+          <div class="form-group">
+            <label for="founder-experience">Founder Experience (Years)</label>
+            <input type="number" id="founder-experience" name="founderExperience" required placeholder="e.g., 3">
+          </div>
+
+          <!-- Product Information -->
+          <div class="form-group-title">
+            <h3><i class="fas fa-cubes"></i> Product Information</h3>
+          </div>
+          
+          <div class="form-group">
+            <label for="product-readiness">Product Readiness</label>
+            <select id="product-readiness" name="productReadiness" required>
+              <option value="" disabled selected>Select Readiness</option>
+              <option value="concept">Concept Only</option>
+              <option value="prototype">Prototype</option>
+              <option value="mvp">MVP</option>
+              <option value="beta">Beta</option>
+              <option value="launched">Launched</option>
+              <option value="scaling">Scaling</option>
+            </select>
+          </div>
+          
+          <div class="form-group">
+            <label for="innovation-level">Innovation Level</label>
+            <select id="innovation-level" name="innovationLevel" required>
+              <option value="" disabled selected>Select Level</option>
+              <option value="revolutionary">Revolutionary</option>
+              <option value="highly-innovative">Highly Innovative</option>
+              <option value="innovative">Innovative</option>
+              <option value="incremental">Incremental</option>
+              <option value="me-too">Me-too Product</option>
+            </select>
+          </div>
+
+          <!-- Strategy Information -->
+          <div class="form-group-title">
+            <h3><i class="fas fa-chess"></i> Strategy Information</h3>
+          </div>
+          
+          <div class="form-group">
+            <label for="marketing-budget">Monthly Marketing Budget ($)</label>
+            <input type="number" id="marketing-budget" name="marketingBudget" required placeholder="e.g., 5000">
+          </div>
+          
+          <div class="form-group">
+            <label for="geo-focus">Geographic Focus</label>
+            <select id="geo-focus" name="geoFocus" required>
+              <option value="" disabled selected>Select Focus</option>
+              <option value="local">Local</option>
+              <option value="regional">Regional</option>
+              <option value="national">National</option>
+              <option value="international">International</option>
+              <option value="global">Global</option>
+            </select>
+          </div>
+          
+          <div class="form-group">
+            <label for="legal-status">Legal Status</label>
+            <select id="legal-status" name="legalStatus" required>
+              <option value="" disabled selected>Select Status</option>
+              <option value="not-registered">Not Registered</option>
+              <option value="sole-proprietor">Sole Proprietorship</option>
+              <option value="partnership">Partnership</option>
+              <option value="llc">LLC</option>
+              <option value="corporation">Corporation</option>
+            </select>
+          </div>
+          
+          <div class="form-group">
+            <label for="growth-strategy">Growth Strategy</label>
+            <select id="growth-strategy" name="growthStrategy" required>
+              <option value="" disabled selected>Select Strategy</option>
+              <option value="organic">Organic Growth</option>
+              <option value="marketing-driven">Marketing-Driven</option>
+              <option value="sales-driven">Sales-Driven</option>
+              <option value="partnership">Partnership-Based</option>
+              <option value="acquisition">Acquisition</option>
+            </select>
+          </div>
+          
+          <div class="form-group">
+            <label for="funding-plan">Funding Plan</label>
+            <select id="funding-plan" name="fundingPlan" required>
+              <option value="" disabled selected>Select Plan</option>
+              <option value="bootstrapped">Bootstrapped</option>
+              <option value="friends-family">Friends & Family</option>
+              <option value="angel">Angel Investment</option>
+              <option value="seed">Seed Round</option>
+              <option value="series-a">Series A</option>
+              <option value="series-b-plus">Series B+</option>
+            </select>
+          </div>
+        </div>
+
+        <div class="form-actions">
+          <button type="submit" id="analyze-button">
+            <span class="button-text">Analyze My Startup</span>
+            <span class="button-icon"><i class="fas fa-arrow-right"></i></span>
+          </button>
+        </div>
+      </form>
+    </section>
+
+    <section id="results-section" class="hidden">
+      <div class="results-header">
+        <h2>Your Startup Analysis</h2>
+        <button id="back-button">
+          <i class="fas fa-arrow-left"></i> Back to Form
+        </button>
+      </div>
+
+      <div class="results-container">
+        <div class="prediction-card">
+          <div class="prediction-header">
+            <h3>Prediction</h3>
+            <div id="prediction-result" class="prediction-badge">Analyzing...</div>
+          </div>
+          <p id="prediction-reason">We're analyzing your startup data...</p>
+        </div>
+
+        <div class="chart-container">
+          <h3>10-Year Growth Projection</h3>
+          <canvas id="growth-chart"></canvas>
+        </div>
+
+        <div class="business-summary">
+          <h3>Business Summary</h3>
+          <div id="business-summary-content"></div>
+        </div>
+      </div>
+    </section>
+
+    <div id="loading-overlay" class="hidden">
+      <div class="loader"></div>
+      <p>Analyzing your startup...</p>
+    </div>
+  </main>
+
+  <footer>
+    <div class="container">
+      <p>&copy; 2025 Unicorn - Startup Business Planner. All rights reserved.</p>
+    </div>
+  </footer>
+
+  <script src="../js/main.js"></script>
+</body>
+</html>

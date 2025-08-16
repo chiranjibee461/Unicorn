@@ -1,0 +1,109 @@
+/* Output section styles */
+.output-section {
+  padding: var(--spacing-6);
+  background-color: var(--color-surface);
+  border-radius: var(--radius-lg);
+  box-shadow: var(--shadow-md);
+}
+
+.solution-container {
+  min-height: 200px;
+  background-color: var(--color-gray-50);
+  border-radius: var(--radius-md);
+  border: 2px solid var(--color-gray-200);
+  overflow: hidden;
+}
+
+.solution-placeholder {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 200px;
+  width: 100%;
+}
+
+.unicorn-waiting {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: var(--spacing-4);
+  opacity: 0.6;
+  animation: float 4s ease-in-out infinite;
+}
+
+.unicorn-waiting-icon {
+  width: 48px;
+  height: 48px;
+  background: linear-gradient(135deg, var(--color-primary-300), var(--color-secondary-300));
+  mask: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='currentColor' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='M19 4h-4a4 4 0 0 0-4 4v12'/%3E%3Cpath d='M7 15a4 4 0 0 0 4 4h1'/%3E%3Cpath d='M11 8a3 3 0 0 1 5 2.236'/%3E%3Cpath d='M13.5 13a5.5 5.5 0 0 1 11 0V16H13.5v-3Z'/%3E%3Cpath d='M21.5 20.5 19 16'/%3E%3Cpath d='M18.5 20.5 16 16'/%3E%3Cpath d='M15 8l-3-3'/%3E%3C/svg%3E") no-repeat center / contain;
+  -webkit-mask: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='currentColor' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='M19 4h-4a4 4 0 0 0-4 4v12'/%3E%3Cpath d='M7 15a4 4 0 0 0 4 4h1'/%3E%3Cpath d='M11 8a3 3 0 0 1 5 2.236'/%3E%3Cpath d='M13.5 13a5.5 5.5 0 0 1 11 0V16H13.5v-3Z'/%3E%3Cpath d='M21.5 20.5 19 16'/%3E%3Cpath d='M18.5 20.5 16 16'/%3E%3Cpath d='M15 8l-3-3'/%3E%3C/svg%3E") no-repeat center / contain;
+}
+
+.unicorn-waiting p {
+  color: var(--color-text-light);
+  font-size: var(--font-size-sm);
+}
+
+.solution-content {
+  padding: var(--spacing-6);
+  animation: fadeIn var(--transition-slow) forwards, slideUp var(--transition-slow) forwards;
+}
+
+.solution-header {
+  font-size: var(--font-size-xl);
+  font-weight: 700;
+  color: var(--color-primary-700);
+  margin-bottom: var(--spacing-4);
+  padding-bottom: var(--spacing-2);
+  border-bottom: 2px solid var(--color-primary-200);
+}
+
+.solution-body {
+  font-size: var(--font-size-base);
+  line-height: var(--line-height-relaxed);
+  color: var(--color-text);
+}
+
+.solution-step {
+  margin-bottom: var(--spacing-4);
+}
+
+.solution-step-title {
+  font-weight: 700;
+  margin-bottom: var(--spacing-2);
+  color: var(--color-primary-700);
+}
+
+.solution-highlight {
+  background: linear-gradient(135deg, var(--color-primary-100), var(--color-secondary-100));
+  padding: var(--spacing-2) var(--spacing-4);
+  border-radius: var(--radius-md);
+  margin: var(--spacing-4) 0;
+  border-left: 3px solid var(--color-primary-500);
+}
+
+.processing-animation {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 200px;
+}
+
+.dot {
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
+  background-color: var(--color-primary-400);
+  margin: 0 var(--spacing-1);
+  animation: pulse 1.5s infinite ease-in-out;
+}
+
+.dot:nth-child(2) {
+  animation-delay: 0.2s;
+  background-color: var(--color-secondary-400);
+}
+
+.dot:nth-child(3) {
+  animation-delay: 0.4s;
+  background-color: var(--color-accent-400);
+}

@@ -1,0 +1,251 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>StartupConnect | Find Your Perfect Mentor, Investor, or Partner</title>
+  <link rel="stylesheet" href="../css/style.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+  <div class="app-container">
+    <header>
+      <div class="logo-container">
+        <i class="fas fa-handshake"></i>
+        <h1>StartupConnect</h1>
+      </div>
+      <p class="tagline">Find the perfect mentor, investor, or partner for your startup journey</p>
+    </header>
+
+    <main>
+      <section class="form-section" id="formSection">
+        <h2>Tell Us About Your Startup</h2>
+        <p class="form-intro">Complete the form below to help us match you with the right people to accelerate your startup</p>
+        
+        <form id="startupForm">
+          <div class="form-grid">
+            <!-- Business Industry -->
+            <div class="form-group">
+              <label for="industry">Business Industry</label>
+              <select id="industry" name="industry" required>
+                <option value="" disabled selected>Select industry</option>
+                <option value="Technology">Technology</option>
+                <option value="Healthcare">Healthcare</option>
+                <option value="Finance">Finance</option>
+                <option value="Education">Education</option>
+                <option value="E-commerce">E-commerce</option>
+                <option value="Manufacturing">Manufacturing</option>
+                <option value="Food & Beverage">Food & Beverage</option>
+                <option value="Entertainment">Entertainment</option>
+                <option value="Energy">Energy</option>
+                <option value="Real Estate">Real Estate</option>
+                <option value="Transportation">Transportation</option>
+                <option value="Agriculture">Agriculture</option>
+                <option value="Other">Other</option>
+              </select>
+            </div>
+
+            <!-- Startup Stage -->
+            <div class="form-group">
+              <label for="stage">Startup Stage</label>
+              <select id="stage" name="stage" required>
+                <option value="" disabled selected>Select stage</option>
+                <option value="Idea">Idea</option>
+                <option value="MVP">MVP</option>
+                <option value="Growth">Growth</option>
+                <option value="Revenue">Revenue</option>
+              </select>
+            </div>
+
+            <!-- Location -->
+            <div class="form-group">
+              <label for="location">Location</label>
+              <input type="text" id="location" name="location" placeholder="City, Country" required>
+            </div>
+
+            <!-- Funding Required -->
+            <div class="form-group">
+              <label for="funding">Funding Required (USD)</label>
+              <input type="number" id="funding" name="funding" placeholder="e.g. 100000" min="0" required>
+            </div>
+
+            <!-- Support Needed -->
+            <div class="form-group full-width">
+              <label>Support Needed (Select all that apply)</label>
+              <div class="checkbox-group">
+                <div class="checkbox-item">
+                  <input type="checkbox" id="mentor" name="supportNeeded" value="Mentor">
+                  <label for="mentor">Mentor</label>
+                </div>
+                <div class="checkbox-item">
+                  <input type="checkbox" id="investor" name="supportNeeded" value="Investor">
+                  <label for="investor">Investor</label>
+                </div>
+                <div class="checkbox-item">
+                  <input type="checkbox" id="guide" name="supportNeeded" value="Guide">
+                  <label for="guide">Guide</label>
+                </div>
+                <div class="checkbox-item">
+                  <input type="checkbox" id="partner" name="supportNeeded" value="Partner">
+                  <label for="partner">Partner</label>
+                </div>
+                <div class="checkbox-item">
+                  <input type="checkbox" id="marketing" name="supportNeeded" value="Marketing">
+                  <label for="marketing">Marketing</label>
+                </div>
+                <div class="checkbox-item">
+                  <input type="checkbox" id="legal" name="supportNeeded" value="Legal">
+                  <label for="legal">Legal</label>
+                </div>
+              </div>
+            </div>
+
+            <!-- Business Model -->
+            <div class="form-group">
+              <label for="businessModel">Business Model</label>
+              <select id="businessModel" name="businessModel" required>
+                <option value="" disabled selected>Select model</option>
+                <option value="SaaS">SaaS</option>
+                <option value="Marketplace">Marketplace</option>
+                <option value="E-commerce">E-commerce</option>
+                <option value="Subscription">Subscription</option>
+                <option value="Freemium">Freemium</option>
+                <option value="Advertising">Advertising</option>
+                <option value="Consulting">Consulting</option>
+                <option value="Franchise">Franchise</option>
+                <option value="Manufacturing">Manufacturing</option>
+                <option value="Other">Other</option>
+              </select>
+            </div>
+
+            <!-- Technology Focus -->
+            <div class="form-group">
+              <label for="techFocus">Technology Focus</label>
+              <select id="techFocus" name="techFocus">
+                <option value="" disabled selected>Select focus</option>
+                <option value="AI/ML">AI/ML</option>
+                <option value="Blockchain">Blockchain</option>
+                <option value="Mobile App">Mobile App</option>
+                <option value="Web Application">Web Application</option>
+                <option value="IoT">IoT</option>
+                <option value="Robotics">Robotics</option>
+                <option value="AR/VR">AR/VR</option>
+                <option value="Cloud">Cloud</option>
+                <option value="Hardware">Hardware</option>
+                <option value="Low/No Tech">Low/No Tech</option>
+                <option value="Other">Other</option>
+              </select>
+            </div>
+
+            <!-- Team Size -->
+            <div class="form-group">
+              <label for="teamSize">Team Size</label>
+              <input type="number" id="teamSize" name="teamSize" placeholder="Number of team members" min="1" required>
+            </div>
+
+            <!-- Years of Operation -->
+            <div class="form-group">
+              <label for="yearsOperating">Years of Operation</label>
+              <input type="number" id="yearsOperating" name="yearsOperating" placeholder="How many years" min="0" step="0.1" required>
+            </div>
+
+            <!-- Revenue Model -->
+            <div class="form-group">
+              <label for="revenueModel">Revenue Model</label>
+              <select id="revenueModel" name="revenueModel" required>
+                <option value="" disabled selected>Select model</option>
+                <option value="Direct Sales">Direct Sales</option>
+                <option value="Licensing">Licensing</option>
+                <option value="Subscription">Subscription</option>
+                <option value="Transaction Fees">Transaction Fees</option>
+                <option value="Advertising">Advertising</option>
+                <option value="Affiliate Marketing">Affiliate Marketing</option>
+                <option value="Freemium">Freemium</option>
+                <option value="Pre-Revenue">Pre-Revenue</option>
+                <option value="Other">Other</option>
+              </select>
+            </div>
+
+            <!-- Preferred Contact Method -->
+            <div class="form-group">
+              <label for="contactMethod">Preferred Contact Method</label>
+              <select id="contactMethod" name="contactMethod" required>
+                <option value="" disabled selected>Select method</option>
+                <option value="Email">Email</option>
+                <option value="Phone">Phone</option>
+                <option value="LinkedIn">LinkedIn</option>
+                <option value="Twitter">Twitter</option>
+                <option value="Website">Website</option>
+              </select>
+            </div>
+
+            <!-- Risk Appetite -->
+            <div class="form-group">
+              <label for="riskAppetite">Risk Appetite</label>
+              <select id="riskAppetite" name="riskAppetite" required>
+                <option value="" disabled selected>Select risk level</option>
+                <option value="Conservative">Conservative</option>
+                <option value="Moderate">Moderate</option>
+                <option value="Aggressive">Aggressive</option>
+                <option value="Very Aggressive">Very Aggressive</option>
+              </select>
+            </div>
+
+            <!-- Target Market -->
+            <div class="form-group full-width">
+              <label for="targetMarket">Target Market</label>
+              <input type="text" id="targetMarket" name="targetMarket" placeholder="Who are your customers?" required>
+            </div>
+
+            <!-- Competitive Advantage -->
+            <div class="form-group full-width">
+              <label for="competitiveAdvantage">Competitive Advantage</label>
+              <input type="text" id="competitiveAdvantage" name="competitiveAdvantage" placeholder="What makes you different?" required>
+            </div>
+
+            <!-- Business Summary -->
+            <div class="form-group full-width">
+              <label for="summary">Business Summary</label>
+              <textarea id="summary" name="summary" placeholder="Brief description of your business..." rows="4" required></textarea>
+            </div>
+          </div>
+
+          <div class="form-footer">
+            <button type="submit" id="submitBtn">Find My Matches</button>
+          </div>
+        </form>
+      </section>
+
+      <section class="results-section hidden" id="resultsSection">
+        <div class="results-header">
+          <h2>Your Startup Network Matches</h2>
+          <p>Based on your profile, we've found these potential connections</p>
+          <button id="backToFormBtn" class="secondary-btn"><i class="fas fa-arrow-left"></i> Edit Profile</button>
+        </div>
+        
+        <div class="loading-container" id="loadingContainer">
+          <div class="spinner"></div>
+          <p>Finding your perfect matches...</p>
+        </div>
+        
+        <div class="error-container hidden" id="errorContainer">
+          <i class="fas fa-exclamation-circle"></i>
+          <p>There was an error processing your request. Please try again.</p>
+          <button id="retryBtn" class="secondary-btn">Retry</button>
+        </div>
+        
+        <div class="results-grid" id="resultsGrid"></div>
+      </section>
+    </main>
+
+    <footer>
+      <p>&copy; 2025 StartupConnect. All rights reserved.</p>
+    </footer>
+  </div>
+
+  <script src="../js/script.js"></script>
+</body>
+</html>

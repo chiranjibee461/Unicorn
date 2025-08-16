@@ -1,0 +1,141 @@
+/* Features section */
+.features {
+    padding: var(--space-xxl) 0;
+}
+
+.feature-cards {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+    gap: var(--space-xl);
+    margin-top: var(--space-xl);
+}
+
+.feature-card {
+    background-color: var(--bg-color);
+    border-radius: var(--radius-lg);
+    padding: var(--space-xl);
+    box-shadow: var(--shadow-md);
+    transition: transform var(--transition-normal), box-shadow var(--transition-normal);
+    display: flex;
+    flex-direction: column;
+    position: relative;
+    overflow: hidden;
+    border: 1px solid var(--border-color);
+}
+
+.feature-card::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 4px;
+    background: linear-gradient(90deg, var(--primary-color), var(--secondary-color));
+    transition: transform var(--transition-normal);
+    transform: scaleX(0);
+    transform-origin: left;
+}
+
+.feature-card:hover {
+    transform: translateY(-5px);
+    box-shadow: var(--shadow-lg);
+}
+
+.feature-card:hover::before {
+    transform: scaleX(1);
+}
+
+.feature-icon {
+    margin-bottom: var(--space-lg);
+    width: 64px;
+    height: 64px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: var(--radius-md);
+    color: white;
+}
+
+.forecast-icon {
+    background-color: var(--primary-color);
+}
+
+.solver-icon {
+    background-color: var(--secondary-color);
+}
+
+.advice-icon {
+    background-color: var(--accent-color);
+}
+
+.idea-icon {
+    background-color: var(--success-color);
+}
+
+.network-icon {
+    background-color: var(--warning-color);
+}
+
+.feature-title {
+    font-size: var(--font-size-lg);
+    margin-bottom: var(--space-md);
+    color: var(--text-color);
+}
+
+.feature-description {
+    color: var(--text-light);
+    margin-bottom: var(--space-lg);
+    flex-grow: 1;
+}
+
+.feature-link {
+    font-weight: 500;
+    display: inline-flex;
+    align-items: center;
+    color: var(--primary-color);
+}
+
+.feature-link::after {
+    content: '→';
+    margin-left: var(--space-xs);
+    transition: transform var(--transition-fast);
+}
+
+.feature-link:hover::after {
+    transform: translateX(4px);
+}
+
+/* Animation for feature cards when in viewport */
+[data-aos="fade-up"] {
+    opacity: 0;
+    transform: translateY(30px);
+    transition: opacity var(--transition-slow), transform var(--transition-slow);
+}
+
+[data-aos="fade-up"].aos-animate {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* Feature cards hover effect */
+@media (hover: hover) {
+    .feature-card:hover .feature-icon {
+        transform: scale(1.1);
+    }
+}
+
+/* Responsive styles */
+@media (max-width: 992px) {
+    .feature-cards {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media (max-width: 768px) {
+    .feature-cards {
+        grid-template-columns: 1fr;
+        max-width: 500px;
+        margin-left: auto;
+        margin-right: auto;
+    }
+}

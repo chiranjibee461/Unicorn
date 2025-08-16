@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Business Idea Refiner</title>
+  <link rel="stylesheet" href="../css/style.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+  <div class="app-container">
+    <header>
+      <div class="logo">
+        <i class="fa-solid fa-lightbulb"></i>
+        <h1>Idea<span>Refiner</span></h1>
+      </div>
+      <p class="tagline">Transform your rough ideas into polished business plans</p>
+    </header>
+
+    <main>
+      <section id="input-section" class="active">
+        <div class="section-header">
+          <h2>Submit Your Business Idea</h2>
+          <p>Fill out the form below to refine your business concept and generate an implementation plan</p>
+        </div>
+
+        <form id="idea-form">
+          <div class="form-group">
+            <label for="business-idea">Your Business Idea</label>
+            <textarea id="business-idea" placeholder="Describe your business idea in detail..." required></textarea>
+          </div>
+
+          <div class="form-row">
+            <div class="form-group">
+              <label for="industry">Industry</label>
+              <select id="industry" required>
+                <option value="" disabled selected>Select an industry</option>
+                <option value="Technology">Technology</option>
+                <option value="Healthcare">Healthcare</option>
+                <option value="Finance">Finance</option>
+                <option value="Education">Education</option>
+                <option value="Retail">Retail</option>
+                <option value="Manufacturing">Manufacturing</option>
+                <option value="Food & Beverage">Food & Beverage</option>
+                <option value="Entertainment">Entertainment</option>
+                <option value="Transportation">Transportation</option>
+                <option value="Real Estate">Real Estate</option>
+                <option value="Energy">Energy</option>
+                <option value="Other">Other</option>
+              </select>
+            </div>
+
+            <div class="form-group">
+              <label for="target-customer">Target Customer</label>
+              <input type="text" id="target-customer" placeholder="Who will use your product/service?" required>
+            </div>
+          </div>
+
+          <div class="form-row">
+            <div class="form-group">
+              <label for="funding">Estimated Funding Needed ($)</label>
+              <input type="number" id="funding" placeholder="25000" min="0" required>
+            </div>
+
+            <div class="form-group">
+              <label for="timeframe">Implementation Timeframe</label>
+              <select id="timeframe" required>
+                <option value="" disabled selected>Select timeframe</option>
+                <option value="0-3 months">0-3 months</option>
+                <option value="3-6 months">3-6 months</option>
+                <option value="6-12 months">6-12 months</option>
+                <option value="1-2 years">1-2 years</option>
+                <option value="2+ years">2+ years</option>
+              </select>
+            </div>
+          </div>
+
+          <div class="form-group">
+            <label for="tech-focus">Technology Focus</label>
+            <select id="tech-focus" required>
+              <option value="" disabled selected>Select primary technology</option>
+              <option value="Web Application">Web Application</option>
+              <option value="Mobile App">Mobile App</option>
+              <option value="AI/Machine Learning">AI/Machine Learning</option>
+              <option value="IoT/Hardware">IoT/Hardware</option>
+              <option value="Blockchain">Blockchain</option>
+              <option value="SaaS">SaaS</option>
+              <option value="E-commerce">E-commerce</option>
+              <option value="Marketplace">Marketplace</option>
+              <option value="Low-tech/Service">Low-tech/Service</option>
+              <option value="Other">Other</option>
+            </select>
+          </div>
+
+          <button type="submit" id="submit-btn" class="primary-button">
+            <span>Refine My Idea</span>
+            <i class="fa-solid fa-arrow-right"></i>
+          </button>
+        </form>
+      </section>
+
+      <section id="loading-section">
+        <div class="loading-container">
+          <div class="loading-animation">
+            <div class="circle"></div>
+            <div class="circle"></div>
+            <div class="circle"></div>
+          </div>
+          <p>Processing your business idea...</p>
+        </div>
+      </section>
+
+      <section id="results-section">
+        <div class="section-header">
+          <h2>Your Refined Business Plan</h2>
+          <button id="back-button" class="secondary-button">
+            <i class="fa-solid fa-arrow-left"></i>
+            <span>Start Over</span>
+          </button>
+        </div>
+
+        <div class="results-container">
+          <div class="result-card idea-card">
+            <div class="card-header">
+              <i class="fa-solid fa-lightbulb"></i>
+              <h3>Refined Business Idea</h3>
+            </div>
+            <div class="card-content">
+              <p id="refined-idea"></p>
+            </div>
+          </div>
+
+          <div class="result-card plan-card">
+            <div class="card-header">
+              <i class="fa-solid fa-list-check"></i>
+              <h3>Implementation Plan</h3>
+            </div>
+            <div class="card-content">
+              <ul id="implementation-steps"></ul>
+            </div>
+          </div>
+
+          <div class="result-card visualization-card">
+            <div class="card-header">
+              <i class="fa-solid fa-diagram-project"></i>
+              <h3>Visual Roadmap</h3>
+            </div>
+            <div class="card-content">
+              <div id="visualization-container"></div>
+            </div>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <footer>
+      <p>&copy; 2025 IdeaRefiner. All rights reserved.</p>
+    </footer>
+  </div>
+
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+  <script src="../js/utils.js"></script>
+  <script src="../js/visualization.js"></script>
+  <script src="../js/api.js"></script>
+  <script src="../js/script.js"></script>
+  
+</body>
+</html>
